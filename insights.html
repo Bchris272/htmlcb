@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Insights — recommended digital marketing video and curated notes from Christian Booth."
+    />
+    <meta
+      name="keywords"
+      content="digital marketing video, analytics insights, Christian Booth"
+    />
+    <title>Insights — Christian Booth</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <p class="brand-name">Christian Booth</p>
+          <p class="brand-tag">Digital Marketing &amp; Web Design</p>
+        </div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="sr-only">Open menu</span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+    <nav id="primary-navigation" class="site-nav" aria-label="Primary">
+      <div class="nav-inner">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="insights.html" aria-current="page">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main-content" class="site-main">
+      <div class="layout-two-col">
+        <article class="card">
+          <h1>Insights</h1>
+          <p class="lede">
+            A curated watch on fundamentals—pair video learning with hands-on practice in
+            analytics tools and campaign experiments.
+          </p>
+          <section aria-labelledby="video-heading">
+            <h2 id="video-heading">Featured video</h2>
+            <div class="video-shell">
+              <iframe
+                src="https://www.youtube.com/watch?v=_UM6sy0sShQ"
+                title="Our first ever PC Build!"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="no-print">
+              This video shows proof of concept for embedding a video into your html code.
+            </p>
+          </section>
+          <section aria-labelledby="takeaways-heading">
+            <h2 id="takeaways-heading">Practical takeaways</h2>
+            <ul>
+              <li>Define the metric that matters before you optimize creative.</li>
+              <li>Document audiences and exclusions to keep experiments comparable.</li>
+              <li>Review landing pages on real phones—not only desktop previews.</li>
+            </ul>
+          </section>
+        </article>
+        <aside class="layout-sidebar">
+          <h2>Bookmark</h2>
+          <blockquote cite="https://bchris272.github.io/">
+            <p>
+              Marketing performs best when messaging, measurement, and UX move together—not
+              as separate silos.
+            </p>
+          </blockquote>
+          <p style="margin-bottom: 0">
+            Explore live projects on the <a href="portfolio.html">portfolio page</a>.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© <span id="y"></span> Christian Booth</p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

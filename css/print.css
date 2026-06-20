@@ -1,0 +1,38 @@
+@page {
+  margin: 1.2cm;
+}
+
+body {
+  background: #fff !important;
+  color: #000 !important;
+  font-size: 11pt;
+}
+
+.site-header,
+.site-nav,
+.video-shell,
+.no-print,
+.skip-link,
+.nav-toggle {
+  display: none !important;
+}
+
+.site-main {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: underline !important;
+}
+
+article,
+.panel {
+  box-shadow: none !important;
+  border: 1px solid #999 !important;
+}
+
+table {
+  page-break-inside: avoid;
+}
