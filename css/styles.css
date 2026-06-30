@@ -709,12 +709,31 @@ legend {
   border-radius: 8px;
 }
 
+.pdf-shell {
+  margin-top: 0.75rem;
+}
+
 .pdf-frame {
+  display: block;
   width: 100%;
   min-height: 520px;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
   background: #fff;
+}
+
+.pdf-fallback {
+  display: none;
+  margin: 0;
+  padding: 1.25rem;
+  text-align: center;
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.pdf-actions {
+  margin-top: 0.85rem;
 }
 
 .badge-list {
@@ -816,7 +835,11 @@ body.nav-open {
   }
 
   .pdf-frame {
-    min-height: 360px;
+    display: none;
+  }
+
+  .pdf-fallback {
+    display: block;
   }
 
   .portfolio-section.card {
