@@ -543,6 +543,73 @@ legend {
   color: var(--text-primary);
 }
 
+.contact-panel {
+  min-width: 0;
+}
+
+.contact-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+
+.contact-tab {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.contact-tab.is-active,
+.contact-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.contact-panel-body p {
+  margin-top: 0;
+}
+
+.form-success {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--text-primary);
+}
+
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.google-form-shell {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.google-form-shell iframe {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+}
+
 .video-shell {
   position: relative;
   padding-bottom: 56.25%;
@@ -832,6 +899,10 @@ body.nav-open {
   .form-row textarea {
     max-width: 100%;
     font-size: max(16px, 1rem);
+  }
+
+  .google-form-shell iframe {
+    min-height: 980px;
   }
 
   .pdf-frame {

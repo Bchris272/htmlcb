@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Contact Christian Booth — submit requests via the official Google Form or use the on-page demo form for coursework."
+      content="Contact Christian Booth — send a message through the website form or the Google Form. Submissions are delivered to Christian Booth."
     />
     <meta
       name="keywords"
@@ -52,111 +52,176 @@
       <section class="card">
         <h1>Contact</h1>
         <p class="lede">
-          For real inquiries, please use the Google Form so submissions route correctly.
-          The HTML form below demonstrates core form controls for coursework.
+          Choose either form below. Website submissions are emailed to
+          <a href="mailto:christianbooth7512@gmail.com">christianbooth7512@gmail.com</a>.
+          Google Form responses are saved to the linked Google account and can also notify you
+          by email.
         </p>
         <div class="btn-row">
-          <a
-            class="btn btn-primary"
-            data-no-transition="true"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSf9nFjU6l7ZkEVKxWF0i4pe7hnTn3R5uYjTgcOgMiMoIWeGiA/viewform?usp=header"
-            rel="noopener noreferrer"
-            >Open Google Form</a
-          >
-          <a class="btn btn-ghost" href="mailto:Christianbooth7512@gmail.com">Email directly</a>
+          <a class="btn btn-ghost" href="mailto:christianbooth7512@gmail.com">Email directly</a>
+          <a class="btn btn-ghost" href="tel:+19372509589">Call 937-250-9589</a>
         </div>
       </section>
 
       <div class="layout-two-col">
-        <section class="form-panel" aria-labelledby="demo-form-heading">
-          <h2 id="demo-form-heading">Course demonstration form</h2>
-          <p>This section is not connected to a server; it showcases labeled controls.</p>
-          <form action="#" method="post">
-            <div class="form-row">
-              <label for="contact-name">Full name</label>
-              <input type="text" id="contact-name" name="contact_name" autocomplete="name" />
-            </div>
-            <div class="form-row">
-              <label for="contact-phone">Telephone</label>
-              <input
-                type="tel"
-                id="contact-phone"
-                name="contact_phone"
-                autocomplete="tel"
-                inputmode="tel"
-              />
-            </div>
-            <div class="form-row">
-              <label for="contact-email">Email</label>
-              <input
-                type="email"
-                id="contact-email"
-                name="contact_email"
-                autocomplete="email"
-                required
-              />
+        <section class="form-panel contact-panel" aria-labelledby="contact-form-heading">
+          <h2 id="contact-form-heading">Send a message</h2>
+
+          <div class="contact-tabs" role="tablist" aria-label="Contact form options">
+            <button
+              class="contact-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-contact-tab="website"
+            >
+              Website form
+            </button>
+            <button
+              class="contact-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-contact-tab="google"
+            >
+              Google Form
+            </button>
+          </div>
+
+          <div class="contact-panel-body" data-contact-panel="website">
+            <p>Use this form to send project details straight to my inbox.</p>
+
+            <div id="form-success" class="form-success" hidden role="status">
+              <strong>Thank you — your message was sent.</strong>
+              I will follow up at the email address you provided.
             </div>
 
-            <fieldset class="radio-group">
-              <legend>Project type</legend>
-              <label>
-                <input type="radio" name="project_type" value="website" checked />
-                Website build or redesign
-              </label>
-              <label>
-                <input type="radio" name="project_type" value="marketing" />
-                Ongoing digital marketing
-              </label>
-              <label>
-                <input type="radio" name="project_type" value="analytics" />
-                Analytics &amp; reporting setup
-              </label>
-              <label>
-                <input type="radio" name="project_type" value="other" />
-                Other / not sure yet
-              </label>
-            </fieldset>
+            <form
+              id="contact-form"
+              action="https://formsubmit.co/christianbooth7512@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New contact request from cbmarketing.tech" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="_next" id="form-next" value="" />
 
-            <fieldset class="checkbox-group">
-              <legend>Interest areas (select any)</legend>
-              <label>
-                <input type="checkbox" name="interest_seo" value="yes" />
-                SEO &amp; content strategy
-              </label>
-              <label>
-                <input type="checkbox" name="interest_ads" value="yes" />
-                Paid media campaigns
-              </label>
-              <label>
-                <input type="checkbox" name="interest_social" value="yes" />
-                Social media management
-              </label>
-              <label>
-                <input type="checkbox" name="interest_crm" value="yes" />
-                CRM &amp; automation
-              </label>
-            </fieldset>
+              <div class="form-row">
+                <label for="contact-name">Full name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="contact-phone">Telephone</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  autocomplete="tel"
+                  inputmode="tel"
+                />
+              </div>
+              <div class="form-row">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
 
-            <div class="form-row">
-              <label for="contact-notes">Project notes</label>
-              <textarea id="contact-notes" name="contact_notes" rows="5"></textarea>
+              <fieldset class="radio-group">
+                <legend>Project type</legend>
+                <label>
+                  <input type="radio" name="project_type" value="Website build or redesign" checked />
+                  Website build or redesign
+                </label>
+                <label>
+                  <input type="radio" name="project_type" value="Ongoing digital marketing" />
+                  Ongoing digital marketing
+                </label>
+                <label>
+                  <input type="radio" name="project_type" value="Analytics and reporting setup" />
+                  Analytics &amp; reporting setup
+                </label>
+                <label>
+                  <input type="radio" name="project_type" value="Other / not sure yet" />
+                  Other / not sure yet
+                </label>
+              </fieldset>
+
+              <fieldset class="checkbox-group">
+                <legend>Interest areas (select any)</legend>
+                <label>
+                  <input type="checkbox" name="interest_seo" value="Yes" />
+                  SEO &amp; content strategy
+                </label>
+                <label>
+                  <input type="checkbox" name="interest_ads" value="Yes" />
+                  Paid media campaigns
+                </label>
+                <label>
+                  <input type="checkbox" name="interest_social" value="Yes" />
+                  Social media management
+                </label>
+                <label>
+                  <input type="checkbox" name="interest_crm" value="Yes" />
+                  CRM &amp; automation
+                </label>
+              </fieldset>
+
+              <div class="form-row">
+                <label for="contact-notes">Project notes</label>
+                <textarea id="contact-notes" name="message" rows="5" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <input type="submit" value="Send message" />
+                <input type="reset" value="Reset form" />
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-panel-body" data-contact-panel="google" hidden>
+            <p>
+              Prefer Google Forms? Submit below or
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf9nFjU6l7ZkEVKxWF0i4pe7hnTn3R5uYjTgcOgMiMoIWeGiA/viewform?usp=header"
+                rel="noopener noreferrer"
+                data-no-transition="true"
+                >open it in a new tab</a
+              >.
+            </p>
+            <div class="google-form-shell">
+              <iframe
+                title="Christian Booth contact Google Form"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf9nFjU6l7ZkEVKxWF0i4pe7hnTn3R5uYjTgcOgMiMoIWeGiA/viewform?embedded=true"
+                width="640"
+                height="1180"
+                loading="lazy"
+              ></iframe>
             </div>
-
-            <div class="form-actions">
-              <input type="submit" value="Submit (demo)" />
-              <input type="reset" value="Reset form" />
-            </div>
-          </form>
+          </div>
         </section>
 
         <aside class="layout-sidebar" aria-label="Direct contact">
           <h2>Direct</h2>
-          <p><strong>Email:</strong> Christianbooth7512@gmail.com</p>
-          <p><strong>Phone:</strong> <a href="tel:+19372509589">937-250-9589</a></p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:christianbooth7512@gmail.com">christianbooth7512@gmail.com</a>
+          </p>
           <p><strong>Location:</strong> Dayton, OH</p>
           <p style="margin-bottom: 0">
             Portfolio:
-            <a href="https://bchris272.github.io/">bchris272.github.io</a>
+            <a href="https://www.cbportfolio.tech">cbportfolio.tech</a>
           </p>
         </aside>
       </div>

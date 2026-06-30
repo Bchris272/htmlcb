@@ -65,6 +65,49 @@
     );
   }
 
+  function initContactForm() {
+    var form = qs("#contact-form");
+    var success = qs("#form-success");
+    var tabs = qsa("[data-contact-tab]");
+    var panels = qsa("[data-contact-panel]");
+    var params = new URLSearchParams(window.location.search);
+
+    if (params.get("sent") === "1" && success) {
+      success.hidden = false;
+      if (form) {
+        form.hidden = true;
+      }
+      if (window.history.replaceState) {
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+    }
+
+    if (form) {
+      var nextField = qs("#form-next", form);
+      if (nextField) {
+        nextField.value =
+          window.location.origin +
+          window.location.pathname +
+          "?sent=1#contact-form-heading";
+      }
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var target = tab.getAttribute("data-contact-tab");
+        tabs.forEach(function (item) {
+          var isActive = item === tab;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        panels.forEach(function (panel) {
+          var isActive = panel.getAttribute("data-contact-panel") === target;
+          panel.hidden = !isActive;
+        });
+      });
+    });
+  }
+
   function initPageTransitions() {
     var internal =
       'a[href$=".html"]:not([data-no-transition]):not([target="_blank"])';
@@ -102,6 +145,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
+    initContactForm();
     initPageTransitions();
   });
 })();
